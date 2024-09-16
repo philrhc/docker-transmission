@@ -1,3 +1,6 @@
+sudo rm -rf /var/tmp/docker_transmission_mount/data;
+sudo rm -rf /var/tmp/docker_transmission_mount/downloads;
+
 docker run -d \
   --name=transmission \
   -e PUID=1000 \
@@ -16,4 +19,4 @@ docker run -d \
   -v /var/tmp/docker_transmission_mount/downloads:/downloads \
   -v /var/tmp/docker_transmission_mount/watch:/watch \
   --restart unless-stopped \
-  transmission
+  transmission:latest
